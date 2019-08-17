@@ -1,0 +1,67 @@
+.timer{
+    width:100%;
+    height: 20%;
+    background: #ffffff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+
+    h4{ 
+        font-weight: 400;
+    }
+
+    .clock{
+        width: 60%;
+        height: 50%;
+         
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+        align-items: center;
+
+        p{
+            font-size: 1.5rem;
+            color:purple;
+        }
+    }
+
+    .time-left{
+        width: 60%;
+        height: 50%;
+         
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+
+         
+
+        .bar{
+            width:80%;
+            height: 20px;
+            border: 1px solid purple;
+            border-radius: 20px;
+        
+            display: flex;
+            flex-direction: row;
+             
+            align-items: center;
+            
+            overflow: hidden;
+           
+            #filled{
+                height: 99%;
+                flex-basis: 100%;
+                border-radius: 20px;
+                transition: 1s ease ;
+                padding: 0;
+                margin: 0;
+                background: purple;
+                
+            }
+        }
+    }
+}

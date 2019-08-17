@@ -1,0 +1,71 @@
+.answer-option{
+
+    width: 100%;
+    height: 25%;
+     
+    display: flex;
+
+    .container{
+
+        width: 100%;
+        height: 100%;
+        
+        display: flex;
+        flex-direction: row;
+        justify-content: flex-start;
+        align-items: center;
+
+        &.markGreen{
+            background: #4caf50;
+        }
+
+        &.markRed{
+            background: #d32f2f;
+        }
+
+        &:hover{
+            background: #eee;
+        }
+
+        .answer-btn{
+            width:15%;
+            height: 100%;
+
+            display: flex;
+            flex-direction: row;
+            justify-content: center;
+            align-items: center;
+
+            .custom-radio{
+                
+                border-radius: 50%;
+                width:  40px;
+                height: 40px;
+               
+                display: flex;
+                flex-direction: row;
+                justify-content: center;
+                align-items: center;
+
+                &.dark{
+                    background: purple;
+                }
+                &.light{
+                    background: #ccc;
+                }
+
+                &:hover{
+                    cursor: pointer;
+                    background: purple;
+                }
+
+                .check{
+                    width: 40%;
+                    height: 40%;
+                    border-radius: 50%;
+                    background: #eee;
+                }
+            }
+        }
+    }
+}
