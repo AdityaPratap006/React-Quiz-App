@@ -45,3 +45,15 @@
         align-items: center;
     }
 }
+
+@media(max-width:660px){
+    .start-page{
+        width:80%;
+
+        .header{
+            .profile-pic{
+                width: 75%;
+            }
+        }
+    }
+}

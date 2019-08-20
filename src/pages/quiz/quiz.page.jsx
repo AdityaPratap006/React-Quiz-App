@@ -2,7 +2,7 @@ import React from 'react';
 import Question from '../../components/question/question.component';
 
 import './quiz.styles.scss';
-import questionsList from '../../data/questionSet'  ;
+
 
 
 
@@ -12,7 +12,9 @@ class Quiz extends React.Component {
         super(props);
         this.state={
             
+            
             currentQuestion:0,
+
            
         }
     }
@@ -21,27 +23,33 @@ class Quiz extends React.Component {
     nextQuestion =  () =>  {
 
         
-        this.setState(prevState => {
-            return {
-                currentQuestion: (prevState.currentQuestion < questionsList.length-1)
-                                 ?  prevState.currentQuestion + 1
-                                 :  questionsList.length  - 1
-            }
+        this.setState((prevState,prevProps) => {
+
+             
+                return {
+                    currentQuestion: (prevState.currentQuestion < prevProps.questionSet.length-1)
+                                     ?  prevState.currentQuestion + 1
+                                     :  prevProps.questionSet.length-1
+                }
+             
         })
     }
 
+    
+    
    
 
     render(){   
-        const {  currentQuestion} = this.state;
-         
+        const {currentQuestion} = this.state;
+        
+       const { questionSet } = this.props;
+
          return (
             <div className='quiz'>
-                 
                  <Question 
                     id={currentQuestion} 
-                    size={questionsList.length} 
-                    question = {questionsList[currentQuestion]} 
+                    size={questionSet.length} 
+                    question = {questionSet[currentQuestion]} 
                     next={this.nextQuestion}
                     changeRoute ={this.props.changeRoute}
                     increaseScore={this.props.increaseScore}

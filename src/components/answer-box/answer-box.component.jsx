@@ -12,36 +12,40 @@ class AnswerBox extends React.Component {
         this.state={
 
             selected: null,
-            alreadySelectedCorrect:false
+            alreadySelectedCorrect:false,
+            disable:false
         }
     }
 
-    selectOption = (index) => {
+    selectOption = (index, timeUp) => {
+
+        if(timeUp){
+            this.setState({disable: true})
+        }else{
+            this.setState({disable:false})
+        }
+
         this.setState({
             selected: index
         },()=>{
             if( this.state.selected >= 0){
 
-                if(this.state.selected === (this.props.correctAnswer) ){
+                if(this.props.options[this.state.selected] === (this.props.correctAnswer) ){
                       
                       if(!this.state.alreadySelectedCorrect){
                             this.setState({
                                 alreadySelectedCorrect:true
                             },() => {
                                 this.props.increaseScore();
-                                if(this.props.correctAnswer === 1){
-                                
-                                }
+                               
                             })
                       }
-                      else{
-
-                      }
+                      
                     
                    
                 }
 
-                if(this.state.selected !== (this.props.correctAnswer) && this.state.alreadySelectedCorrect){
+                if(this.props.options[this.state.selected] !== (this.props.correctAnswer) && this.state.alreadySelectedCorrect){
                      this.props.decreaseScore()
                     this.setState({
                         alreadySelectedCorrect:false
@@ -69,8 +73,10 @@ class AnswerBox extends React.Component {
                         <AnswerOption
                         key={ index} 
                          optionIndex={index}
+                         
+                         disable={this.state.disable}
                         text={option} 
-                        selectOption={()=>this.selectOption(index)} 
+                        selectOption={()=>this.selectOption(index,timeUp)} 
                         checked={this.state.selected === index}
                         timeUp={timeUp}
                         correctAnswer={correctAnswer}

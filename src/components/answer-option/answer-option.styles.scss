@@ -16,15 +16,17 @@
         align-items: center;
 
         &.markGreen{
-            background: #4caf50;
+            background: #4caf50 !important ;
         }
 
         &.markRed{
-            background: #d32f2f;
+            background: #d32f2f !important;
         }
 
         &:hover{
             background: #eee;
+            cursor: pointer;
+            
         }
 
         .answer-btn{
@@ -54,10 +56,14 @@
                     background: #ccc;
                 }
 
-                &:hover{
-                    cursor: pointer;
-                    background: purple;
+                &.disable{
+                    background: #ccc !important;
+
+                    .check{
+                        background: #ccc !important;
+                    }
                 }
+                 
 
                 .check{
                     width: 40%;
@@ -66,6 +72,41 @@
                     background: #eee;
                 }
             }
+        }
+    }
+}
+
+@media (max-width: 660px){
+
+    .answer-option{
+
+        .container{
+
+            &:hover{
+                background: #fff;
+                cursor: pointer;
+            }
+
+            .answer-text{
+                h5{
+                    font-weight: 500;
+                    font-size: 0.9rem;
+                }
+            }
+
+            .answer-btn{
+
+                    width: 30%;
+                .custom-radio{
+                    border-radius: 50%;
+                    width:  27px;
+                    height: 27px;
+
+                   
+                }
+            }
+
+
         }
     }
 }

@@ -3,6 +3,7 @@ import React from 'react';
 import './question.styles.scss';
 import Timer from '../timer/timer.component';
 import QuestionBody from '../question-body/question-body.component';
+import Loader from '../loader/loader.component';
  
 
 class Question extends React.Component{
@@ -52,9 +53,10 @@ class Question extends React.Component{
                  secondsLeft={this.state.secondsLeft<=10? (this.state.secondsLeft):10}/>
                 { 
                     (this.state.secondsLeft>10)
-                    ?<h1>Loading...</h1>
+                    ? <Loader/>
                     : <QuestionBody 
                             question={question}
+                            index = {id}
                             goToNext={()=> {
 
                                     if(id< size-1){

@@ -2,17 +2,17 @@ import React from 'react';
 
 import './answer-option.styles.scss';
 
-const AnswerOption = ({ optionIndex,text,checked, selectOption, timeUp, correctAnswer}) => (
-    <div className='answer-option'>
+const AnswerOption = ({ optionIndex,text,checked, selectOption, timeUp, correctAnswer, disable}) => (
+    <div className='answer-option' onClick={(!timeUp)?selectOption:null}>
         <label className={`container 
         
-            ${((optionIndex === correctAnswer) && timeUp )
+            ${((text === correctAnswer) && timeUp )
                 ?'markGreen'
                 :''
             }
 
             ${
-                (checked && timeUp && (optionIndex !== correctAnswer))
+                (checked && timeUp && (text !== correctAnswer))
                 ?'markRed'
                 :''
             }
@@ -21,7 +21,7 @@ const AnswerOption = ({ optionIndex,text,checked, selectOption, timeUp, correctA
         }>
             
             <div className = 'answer-btn'>
-                 <div className={`custom-radio ${checked?'dark':'light'}`} onClick={(!timeUp)?selectOption:null} >
+                 <div className={`custom-radio ${(checked)?'dark':'light'} ${(disable)?'disable':''}`}  >
                         <div className={(checked)?'check':''}>
 
                         </div>

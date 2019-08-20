@@ -5,7 +5,8 @@ import './App.css';
 import Quiz from './pages/quiz/quiz.page';
 import StartPage from './pages/start/start.page';
 import EndPage from './pages/end/end.page';
-import QuestionsList from './data/questionSet';
+import Loader from './components/loader/loader.component';
+ 
 
 class  App extends React.Component {
   
@@ -15,12 +16,24 @@ class  App extends React.Component {
     this.state={
       currentPage:'start',
       score:0,
+      totalScore:0,
+      isLoading:true,
+      questionSet:null,
     }
   }
 
 
   changeRoute = (route ) => {
     this.setState({currentPage: route})
+
+
+    //when the app resets to start get new set of questions
+    if(route === 'start'){
+      fetch('https://opentdb.com/api.php?amount=10')
+      .then(res => res.json())
+      .then(data =>  this.setState({ questionSet:  data.results, isLoading: false }))
+      .catch(err => console.log(err))
+    }
   }
 
   resetScore =() => {
@@ -45,21 +58,32 @@ class  App extends React.Component {
       }
     })
   }
+
+  componentDidMount(){
+        
+    
+      fetch('https://opentdb.com/api.php?amount=10')
+      .then(res => res.json())
+      .then(data =>  this.setState({ questionSet:  data.results, isLoading: false }))
+      .catch(err => console.log(err))
+     
+
+}
   
   render(){
 
 
-    const { score, currentPage } = this.state;
+    const { score, currentPage, questionSet , isLoading } = this.state;
 
    
 
     let content = null;
 
     if(currentPage === 'quiz'){
-      content = <Quiz changeRoute={this.changeRoute}  increaseScore={this.increaseScore} decreaseScore={this.decreaseScore}/>
+      content = <Quiz questionSet={questionSet}  changeRoute={this.changeRoute}  increaseScore={this.increaseScore} decreaseScore={this.decreaseScore}/>
     }
     else if(currentPage === 'end'){
-      content = <EndPage resetScore={this.resetScore} changeRoute={this.changeRoute} score={score} totalScore={QuestionsList.length} />;
+      content = <EndPage resetScore={this.resetScore} changeRoute={this.changeRoute} score={score} totalScore={questionSet.length} />;
     }
     else if( currentPage === 'start'){
       content =  <StartPage changeRoute={this.changeRoute}/>
@@ -68,7 +92,7 @@ class  App extends React.Component {
     return (
       <div className="App">
          
-          {content}
+        {(!isLoading)?content:   <Loader basicLoader/>  }
           
       </div>
     );

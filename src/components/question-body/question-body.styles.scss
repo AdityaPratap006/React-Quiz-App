@@ -29,3 +29,21 @@
         align-items: center;
     }
 }
+
+@media(max-width:660px){
+
+    .question-body{
+        .question-text{
+            height: 35%;
+
+            h3{
+                font-weight: 450;
+                font-size: 1rem;
+            }
+        }
+
+        .footer{
+            justify-content: center;
+        }
+    }
+}
