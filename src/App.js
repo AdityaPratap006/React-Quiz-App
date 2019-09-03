@@ -90,10 +90,16 @@ class  App extends React.Component {
     }
 
     return (
-      <div className="App">
-         
-        {(!isLoading)?content:   <Loader basicLoader/>  }
-          
+      <div className="my-gradient-bg 
+          h-screen  
+           
+          flex 
+          flex-row 
+          justify-center 
+          items-center">
+           
+            {(!isLoading)?content:   <Loader basicLoader/>  }
+           
       </div>
     );
   }

@@ -1,7 +1,7 @@
 .question-body{
     width:100%;
     height: 78%;
-    background: #fff;
+    /*background: #fff;
     overflow: hidden;
     border-radius: 8px;
     box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
@@ -9,7 +9,7 @@
     display: flex;
     flex-direction: column;
     justify-content: flex-start;
-    align-items: center;
+    align-items: center;*/
     
     .question-text{
         width:90%;
@@ -24,9 +24,9 @@
         width: 90%;
         height: 15%;
         
-        display: flex;
+       /* display: flex;
         flex-direction: row-reverse;
-        align-items: center;
+        align-items: center;*/
     }
 }
 
@@ -42,8 +42,8 @@
             }
         }
 
-        .footer{
+       /* .footer{
             justify-content: center;
-        }
+        }*/
     }
 }

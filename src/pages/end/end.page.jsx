@@ -21,16 +21,16 @@ const EndPage= ({score, totalScore, changeRoute, resetScore}) => {
     }
 
     return (
-     <div className='end-page'>
-        <div className='score'>
+     <div className='end-page  bg-white flex flex-col justify-center items-center rounded-lg shadow-2xl'>
+        <div className='score flex flex-col justify-center items-center'>
             <h4>Your score is:</h4>
             <h1>{score}/{totalScore}</h1>
         </div>
-        <div className='performance'>
+        <div className='performance flex flex-col justify-center items-center'>
             <h4>Your performance was:</h4>
             {performanceText}
         </div>
-        <div className='footer'>
+        <div className='footer flex flex-col justify-center items-center' >
             <CustomButton
                 text={'Play Again'}
                 onClickFunction={()=> {

@@ -46,7 +46,7 @@ class Question extends React.Component{
         const {id, size, question , next, increaseScore, decreaseScore} = this.props;
 
         return(
-            <div className='question'>
+            <div className='question flex flex-col justify-between items-center overflow-hidden'>
                  <Timer 
                  totalTime ={10}
                  timeUpAlert ={timeUpAlert}

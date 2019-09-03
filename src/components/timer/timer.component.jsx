@@ -19,12 +19,12 @@ const Timer = ({secondsLeft, totalTime, timeUpAlert}) =>  {
 
     return (
 
-            <div className='timer'>
-                <div className='clock'>
+            <div className='timer bg-white flex flex-col justify-center items-center rounded-lg shadow-xl'>
+                <div className='clock flex flex-row justify-center items-center'>
                     <p>00:{secondsLeft>=10?secondsLeft:`0${secondsLeft}`}</p>
                 </div>
-                <div className='time-left'>
-                    <div className='bar'>
+                <div className='time-left flex flex-col justify-center items-center'>
+                    <div className='bar flex flex-row justify-start items-center overflow-hidden'>
                         <div id='filled'>
 
                         </div>
@@ -32,7 +32,7 @@ const Timer = ({secondsLeft, totalTime, timeUpAlert}) =>  {
                     </div>
                    
                 </div>
-                <h4>{timeUpAlert}</h4>
+                <h4 className=''>{timeUpAlert}</h4>
             </div>
 )}
     

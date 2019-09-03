@@ -67,7 +67,7 @@ class AnswerBox extends React.Component {
 
          
         return (
-            <div className='answer-box'>
+            <div className='answer-box flex flex-col justify-center items-center'>
                 {
                     options.map((option,index) => (
                         <AnswerOption
