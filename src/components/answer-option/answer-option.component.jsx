@@ -22,14 +22,14 @@ const AnswerOption = ({ optionIndex,text,checked, selectOption, timeUp, correctA
             `
         }>
             
-            <div className = 'answer-btn xs:w-35/100 sm:w-15/100 h-full flex flex-row justify-center items-center'>
+            <div className = 'answer-btn  xs:w-1/5 h-full flex flex-row justify-center items-center'>
                  <div className={`custom-radio rounded-full flex flex-row justify-center items-center ${(checked)?'dark':'light'} ${(disable)?'disable':''}`}  >
                         <div className={(checked)?'check':''}>
 
                         </div>
                  </div>
             </div>
-            <div className='answer-text xs:w-65/100 sm:w-85/100'>
+            <div className='answer-text  xs:w-4/5 '>
                 <h5>{text}</h5>
             </div>
         </label>
