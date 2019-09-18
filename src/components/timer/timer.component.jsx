@@ -19,20 +19,20 @@ const Timer = ({secondsLeft, totalTime, timeUpAlert}) =>  {
 
     return (
 
-            <div className='timer bg-white flex flex-col justify-center items-center rounded-lg shadow-xl'>
-                <div className='clock flex flex-row justify-center items-center'>
-                    <p>00:{secondsLeft>=10?secondsLeft:`0${secondsLeft}`}</p>
+            <div className='timer w-full  h-1/5 bg-white flex flex-col justify-center items-center rounded-lg shadow-xl'>
+                <div className='clock w-3/5 h-1/2 flex flex-row justify-center items-center'>
+                    <p className='text-2xl text-pink-900'>00:{secondsLeft>=10?secondsLeft:`0${secondsLeft}`}</p>
                 </div>
-                <div className='time-left flex flex-col justify-center items-center'>
-                    <div className='bar flex flex-row justify-start items-center overflow-hidden'>
-                        <div id='filled'>
+                <div className='time-left xs:w-4/5 sm:w-3/5 h-1/2 flex flex-col justify-center items-center'>
+                    <div className='bar w-4/5 xs:h-5  sm:h-6 border border-pink-900 rounded-full flex flex-row justify-start items-center overflow-hidden'>
+                        <div id='filled' className='rounded-full h-full bg-pink-900'>
 
                         </div>
 
                     </div>
                    
                 </div>
-                <h4 className=''>{timeUpAlert}</h4>
+                <h4 className='font-normal'>{timeUpAlert}</h4>
             </div>
 )}
     

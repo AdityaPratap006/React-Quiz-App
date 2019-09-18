@@ -42,8 +42,8 @@ class QuestionBody extends React.Component{
 
 
         return (
-            <div className='question-body bg-white overflow-hidden round-lg shadow-xl flex flex-col justify-start items-center'>
-                <div className='question-text flex flex-col justify-center  '>
+            <div className='question-body w-full h-3/4 bg-white overflow-hidden rounded-lg shadow-xl flex flex-col justify-start items-center'>
+                <div className='question-text w-9/10 xs:h-35/100 sm:h-1/5 flex flex-col justify-center  '>
                     <h3>Q. {index + 1}</h3>
                     <h3>{question.question}</h3>
                 </div>
@@ -54,7 +54,7 @@ class QuestionBody extends React.Component{
                     increaseScore={increaseScore}
                     decreaseScore={decreaseScore}
                 />
-                <div className='footer flex flex-row justify-center items-center'>
+                <div className='footer w-9/10 h-15/100 flex flex-row justify-center items-center'>
                     <CustomButton 
                     text={(lastQuestion)?'Submit':'Next'}
                     onClickFunction={goToNext}

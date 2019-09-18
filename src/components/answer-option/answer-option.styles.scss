@@ -1,14 +1,14 @@
 .answer-option{
 
-    width: 100%;
-    height: 25%;
+    //width: 100%;
+    //height: 25%;
      
     /*display: flex;*/
 
-    .container{
+    .answer-container{
 
-        width: 100%;
-        height: 100%;
+       // width: 100%;
+       // height: 100%;
         
         /*display: flex;
         flex-direction: row;
@@ -17,10 +17,12 @@
 
         &.markGreen{
             background: #4caf50 !important ;
+           
         }
 
         &.markRed{
             background: #d32f2f !important;
+             
         }
 
         &:hover{
@@ -30,8 +32,8 @@
         }
 
         .answer-btn{
-            width:15%;
-            height: 100%;
+            //width:15%;
+            //height: 100%;
 
            /* display: flex;
             flex-direction: row;
@@ -80,8 +82,8 @@
 
     .answer-option{
 
-        .container{
-
+        .answer-container{
+               
             &:hover{
                 background: #fff;
                 cursor: pointer;
@@ -96,7 +98,7 @@
 
             .answer-btn{
 
-                    width: 30%;
+                    //width: 30%;
                 .custom-radio{
                     border-radius: 50%;
                     width:  27px;

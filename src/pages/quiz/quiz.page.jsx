@@ -45,7 +45,7 @@ class Quiz extends React.Component {
        const { questionSet } = this.props;
 
          return (
-            <div className='quiz flex flex-col justify-center items-center'>
+            <div className='quiz md:w-3/5 xs:w-4/5 flex flex-col justify-center items-center'>
                  <Question 
                     id={currentQuestion} 
                     size={questionSet.length} 
