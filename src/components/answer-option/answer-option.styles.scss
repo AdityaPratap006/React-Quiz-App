@@ -31,50 +31,7 @@
             
         }
 
-        .answer-btn{
-            //width:15%;
-            //height: 100%;
-
-           /* display: flex;
-            flex-direction: row;
-            justify-content: center;
-            align-items: center;*/
-
-            .custom-radio{
-                
-                /*border-radius: 50%;*/
-                width:  40px;
-                height: 40px;
-               
-                /*display: flex;
-                flex-direction: row;
-                justify-content: center;
-                align-items: center;*/
-
-                &.dark{
-                    background: purple;
-                }
-                &.light{
-                    background: #ccc;
-                }
-
-                &.disable{
-                    background: #ccc !important;
-
-                    .check{
-                        background: #ccc !important;
-                    }
-                }
-                 
-
-                .check{
-                    width: 40%;
-                    height: 40%;
-                    border-radius: 50%;
-                    background: #eee;
-                }
-            }
-        }
+        
     }
 }
 
@@ -96,17 +53,7 @@
                 }
             }
 
-            .answer-btn{
-
-                    //width: 30%;
-                .custom-radio{
-                    border-radius: 50%;
-                    width:  27px;
-                    height: 27px;
-
-                   
-                }
-            }
+           
 
 
         }

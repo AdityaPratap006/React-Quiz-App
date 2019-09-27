@@ -1,8 +1,8 @@
 import React from 'react';
 
 import './answer-option.styles.scss';
+import RadioButton from '../radio-button/radio-button.component';
 
- 
 
 const AnswerOption = ({ optionIndex,text,checked, selectOption, timeUp, correctAnswer, disable}) => (
     <div className='answer-option w-full h-1/4 flex  flex-row justify-start items-center' onClick={(!timeUp)?selectOption:null}>
@@ -22,13 +22,8 @@ const AnswerOption = ({ optionIndex,text,checked, selectOption, timeUp, correctA
             `
         }>
             
-            <div className = 'answer-btn  xs:w-1/5 h-full flex flex-row justify-center items-center'>
-                 <div className={`custom-radio rounded-full flex flex-row justify-center items-center ${(checked)?'dark':'light'} ${(disable)?'disable':''}`}  >
-                        <div className={(checked)?'check':''}>
+            <RadioButton checked={checked} disable={disable}/>
 
-                        </div>
-                 </div>
-            </div>
             <div className='answer-text  xs:w-4/5 '>
                 <h5>{text}</h5>
             </div>

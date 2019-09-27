@@ -24,8 +24,8 @@ const Timer = ({secondsLeft, totalTime, timeUpAlert}) =>  {
                     <p className='text-2xl text-pink-900'>00:{secondsLeft>=10?secondsLeft:`0${secondsLeft}`}</p>
                 </div>
                 <div className='time-left xs:w-4/5 sm:w-3/5 h-1/2 flex flex-col justify-center items-center'>
-                    <div className='bar w-4/5 xs:h-5  sm:h-6 border border-pink-900 rounded-full flex flex-row justify-start items-center overflow-hidden'>
-                        <div id='filled' className='rounded-full h-full bg-pink-900'>
+                    <div className='bar w-4/5 p-1 border border-pink-900 rounded-full flex flex-row justify-start items-center overflow-hidden'>
+                        <div id='filled' className='rounded-full xs:h-5  sm:h-6 bg-pink-900'>
 
                         </div>
 
